@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Maximize2, Sparkles } from 'lucide-react';
+import { Maximize2 } from 'lucide-react';
 import { galleryImages } from '../data/gallery';
 import Lightbox from '../components/Lightbox';
 

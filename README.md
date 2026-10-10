@@ -1,18 +1,36 @@
-# React + Vite
+# HU Culinary
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React, Vite, and Tailwind CSS single-page website.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Use Node.js 22.12.0 or later (see `.nvmrc`), then run:
 
-## React Compiler
+```sh
+npm ci
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Build
 
-## Expanding the Oxlint configuration
+```sh
+npm run build
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-"# -eb-"  
-"# -eb-"  
+The production site is generated in `dist`.
+
+## Deploy to Cloudflare Pages
+
+Connect the `th-az/webhieu` GitHub repository to Cloudflare Pages and use:
+
+- **Production branch:** `main`
+- **Build command:** `npm run build`
+- **Build output directory:** `dist`
+- **Root directory:** `/` (the repository root)
+- **Node.js version:** `22.12.0` or later
+
+The `public/_redirects` rule serves the Vite entry point for client-side routes,
+so routes such as `/products/classic-hu` continue to work when opened or
+refreshed directly. Public images and build assets use root-relative URLs.
+
+No Cloudflare Worker, database, or Netlify-specific configuration is required.

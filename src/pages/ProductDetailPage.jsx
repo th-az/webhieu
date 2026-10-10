@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Flame, Layers, Leaf, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Flame, Layers, Leaf, Sparkles } from 'lucide-react';
 import { products } from '../data/products';
 import ProductCard from '../components/ProductCard';
 
